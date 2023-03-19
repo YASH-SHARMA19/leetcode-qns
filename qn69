@@ -1,0 +1,20 @@
+//leetcode question no 69
+class Solution {
+public:
+    int mySqrt(int x) {
+        long long int ans;
+        for(long long int i =0;i<=x;i++){
+            if((i*i)==x){
+                return i;
+                break;
+            }
+            else if((i*i)>x){
+                ans =i-1;
+                break;
+
+            }
+        }
+        return ans;
+        
+    }
+};
