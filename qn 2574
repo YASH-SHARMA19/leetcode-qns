@@ -1,0 +1,33 @@
+//leetcode qn no 2574 Left and right sum 
+class Solution {
+public:
+    vector<int> leftRigthDifference(vector<int>& nums) {
+        vector <int> leftsum;
+        vector <int> rightsum;
+        vector <int>result;
+        int lsum=0;int rsum =0;
+        for(int i=0;i<nums.size()-1;i++)
+        {
+            // leftsum.push_back(0);
+            lsum = lsum +nums[i];
+            leftsum.push_back(lsum);
+        }
+        leftsum.insert(leftsum.begin(),0);
+        // return leftsum;
+        int sz =nums.size();
+         for(int i=sz-1;i>=1;i--)
+        {
+           
+            rsum = rsum +nums[i];
+            rightsum.insert(rightsum.begin(),rsum);
+        }
+        rightsum.push_back(0);
+        for(int i=0;i<nums.size();i++)
+        {
+            int ans =abs(leftsum[i]-rightsum[i]);
+            result.push_back(ans);
+        }
+        return result;
+    
+    }
+};
