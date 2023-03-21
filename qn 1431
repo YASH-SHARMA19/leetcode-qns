@@ -1,0 +1,22 @@
+// leetcode qn 1431 solution given below
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        vector <bool> vec;
+        int cands = 0;
+        for(int i =0;i<candies.size();i++){
+            cands = max(cands,candies[i]);
+            
+        }
+        for(int i=0;i<candies.size();i++){
+            if((candies[i] + extraCandies)>=cands){
+                vec.push_back(true);
+            }
+            else{
+                vec.push_back(false);
+            }
+        }
+        return vec;
+        
+    }
+};
