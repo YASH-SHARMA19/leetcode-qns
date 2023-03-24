@@ -1,0 +1,33 @@
+//leetcode qn no 4 solution 
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int m,n;
+        m=nums1.size();
+        n=nums2.size();
+        vector<int>& nums3=nums1;
+        
+            for(int i=0;i<n;i++)
+            {
+                nums1.push_back(nums2[i]);
+            }
+        sort(nums1.begin(),nums1.end());
+        int x=nums1.size();double median;
+        if(x%2==0)
+        {
+            int a=x/2;
+            int b=a-1;
+            double v=nums1[a]+nums1[b];
+            median=v/2;
+
+        }
+        else
+
+        {
+        int r=x;
+        int i=r/2;
+            median=nums1[i];}
+        return median;
+    }
+    
+};
